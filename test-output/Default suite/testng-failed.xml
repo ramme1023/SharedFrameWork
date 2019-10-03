@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Hybrid.TesterLogin">
+      <class name="Hybrid.SecondLogin">
         <methods>
-          <include name="OpenUrl"/>
+          <include name="ZE"/>
           <include name="closeAll"/>
           <include name="intialize"/>
         </methods>
-      </class> <!-- Hybrid.TesterLogin -->
+      </class> <!-- Hybrid.SecondLogin -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

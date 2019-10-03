@@ -1,0 +1,6 @@
+# Created at 2019-10-03T16:01:09.585
+Picked up JAVA_TOOL_OPTIONS: -agentlib:jvmhook
+
+# Created at 2019-10-03T16:01:09.589
+Picked up _JAVA_OPTIONS: -Xrunjvmhook -Xbootclasspath/a:"C:\Program Files (x86)\Micro Focus\Unified Functional Testing\bin\java_shared\classes\jasmine.jar"
+

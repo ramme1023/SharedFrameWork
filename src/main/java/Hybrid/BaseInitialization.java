@@ -35,6 +35,7 @@ public class BaseInitialization {
 	public static String PathForDriver=System.getProperty("user.dir")+"\\src\\main\\java\\Jars\\";
 	public static ArrayList<String> names = new ArrayList<String>();
 	public static String strtestname="";
+	public static Properties Prop = new Properties();
 
 	// added by Ramesh Nalla on 30-sep-2019 intializing driver
 	public WebDriver InitializeDriver() {
@@ -61,19 +62,16 @@ public class BaseInitialization {
 		return driver;
 	}
 	
-	int i=0;
+	
 	public void LoadProp() throws IOException {
-		Properties Prop = new Properties();
 		FileInputStream files = new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\java\\resources\\Prop.properties");
 		Prop.load(files);
 		strtestname = Prop.getProperty("testname");
 	}
 	
+	int i=0;
 	public void Screenshot(String name) throws IOException {
 		i=i+1;
-		Properties Prop = new Properties();
-		FileInputStream files = new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\java\\resources\\Prop.properties");
-		Prop.load(files);
 		String strtestname = Prop.getProperty("testname");
 		File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		String finalname = i+". "+name;
@@ -107,7 +105,7 @@ public class BaseInitialization {
 
             XWPFDocument docx = new XWPFDocument();
             XWPFRun run = docx.createParagraph().createRun();
-            FileOutputStream out = new FileOutputStream("C:\\Users\\UX015235\\eclipse-workspace\\SharedFrameWork\\Results\\TesterLogin\\Res.doc");
+            FileOutputStream out = new FileOutputStream(Userdir+strtestname+"\\Res.doc");
 
             for (String str : names) {
                 docx.createParagraph();
@@ -121,6 +119,11 @@ public class BaseInitialization {
             out.flush();
             out.close();
             docx.close();
+            docx=null;
+            run=null;
+            out=null;
+            names.clear();
+            i=0;
 
         } catch (Exception e) {
             e.printStackTrace();

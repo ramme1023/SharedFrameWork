@@ -6,6 +6,7 @@
       <class name="Hybrid.TesterLogin">
         <methods>
           <include name="OpenUrl"/>
+          <include name="closeAll"/>
           <include name="intialize"/>
         </methods>
       </class> <!-- Hybrid.TesterLogin -->
